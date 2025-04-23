@@ -1,0 +1,43 @@
+@use "sass:color";
+
+body {
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 100dvh;
+  font-family: "Roboto", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #086759;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 10px;
+}
+
+.nav-link:hover {
+  background-color: color.adjust($color: #086759, $lightness: -10%);
+}
+
+@media (max-width: 430px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-link {
+    text-align: center;
+  }
+}

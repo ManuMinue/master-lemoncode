@@ -1,19 +1,20 @@
 @use "theme-a" as a;
 @use "theme-b" as b;
+@use "sass:map";
 
 @mixin box-shadow($x: -3px, $y: 3px) {
   box-shadow: $x $y 3px 3px rgba(0, 0, 0, 0.6);
 }
 
 @mixin apply-theme($theme) {
-  $base-color: map-get($theme, base-color);
-  $important-color: map-get($theme, important-color);
-  $warning-color: map-get($theme, warning-color);
-  $principal-font: map-get($theme, principal-font);
-  $secondary-font: map-get($theme, secondary-font);
-  $box-shadow-x: map-get($theme, box-shadow-x);
-  $box-shadow-y: map-get($theme, box-shadow-y);
-  $border-radius: map-get($theme, border-radius);
+  $base-color: map.get($theme, base-color);
+  $important-color: map.get($theme, important-color);
+  $warning-color: map.get($theme, warning-color);
+  $principal-font: map.get($theme, principal-font);
+  $secondary-font: map.get($theme, secondary-font);
+  $box-shadow-x: map.get($theme, box-shadow-x);
+  $box-shadow-y: map.get($theme, box-shadow-y);
+  $border-radius: map.get($theme, border-radius);
 
   & > .box {
     border-radius: $border-radius;
