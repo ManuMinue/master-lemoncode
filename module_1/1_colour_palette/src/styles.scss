@@ -1,0 +1,171 @@
+@use "sass:color";
+
+// Base color
+$base-red: #ff0000;
+$base-blue: #0000ff;
+$base-green: #008000;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  font-family: Roboto, sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(100px, 1fr));
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+
+  & > .box {
+    width: 100px;
+    padding: 6px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    & > .color-box-text {
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    &.lighten-1 > .color-box-text {
+      color: color.adjust(white, $lightness: -20%);
+    }
+
+    &.lighten-2 > .color-box-text {
+      color: color.adjust(white, $lightness: -40%);
+    }
+
+    &.lighten-3 > .color-box-text {
+      color: color.adjust(white, $lightness: -60%);
+    }
+
+    &.lighten-4 > .color-box-text {
+      color: color.adjust(white, $lightness: -80%);
+    }
+  }
+}
+
+.red {
+  &.darken-4 {
+    background-color: color.adjust($base-red, $lightness: -40%);
+  }
+
+  &.darken-3 {
+    background-color: color.adjust($base-red, $lightness: -30%);
+  }
+
+  &.darken-2 {
+    background-color: color.adjust($base-red, $lightness: -20%);
+  }
+
+  &.darken-1 {
+    background-color: color.adjust($base-red, $lightness: -10%);
+  }
+
+  &.base-color {
+    background-color: $base-red;
+  }
+
+  &.lighten-1 {
+    background-color: color.adjust($base-red, $lightness: 10%);
+  }
+
+  &.lighten-2 {
+    background-color: color.adjust($base-red, $lightness: 20%);
+  }
+
+  &.lighten-3 {
+    background-color: color.adjust($base-red, $lightness: 30%);
+  }
+
+  &.lighten-4 {
+    background-color: color.adjust($base-red, $lightness: 40%);
+  }
+}
+
+.blue {
+  &.darken-4 {
+    background-color: color.adjust($base-blue, $lightness: -40%);
+  }
+
+  &.darken-3 {
+    background-color: color.adjust($base-blue, $lightness: -30%);
+  }
+
+  &.darken-2 {
+    background-color: color.adjust($base-blue, $lightness: -20%);
+  }
+
+  &.darken-1 {
+    background-color: color.adjust($base-blue, $lightness: -10%);
+  }
+
+  &.base-color {
+    background-color: $base-blue;
+  }
+
+  &.lighten-1 {
+    background-color: color.adjust($base-blue, $lightness: 10%);
+  }
+
+  &.lighten-2 {
+    background-color: color.adjust($base-blue, $lightness: 20%);
+  }
+
+  &.lighten-3 {
+    background-color: color.adjust($base-blue, $lightness: 30%);
+  }
+
+  &.lighten-4 {
+    background-color: color.adjust($base-blue, $lightness: 40%);
+  }
+}
+
+.green {
+  &.darken-4 {
+    background-color: color.adjust($base-green, $lightness: -40%);
+  }
+
+  &.darken-3 {
+    background-color: color.adjust($base-green, $lightness: -30%);
+  }
+
+  &.darken-2 {
+    background-color: color.adjust($base-green, $lightness: -20%);
+  }
+
+  &.darken-1 {
+    background-color: color.adjust($base-green, $lightness: -10%);
+  }
+
+  &.base-color {
+    background-color: $base-green;
+  }
+
+  &.lighten-1 {
+    background-color: color.adjust($base-green, $lightness: 10%);
+  }
+
+  &.lighten-2 {
+    background-color: color.adjust($base-green, $lightness: 20%);
+  }
+
+  &.lighten-3 {
+    background-color: color.adjust($base-green, $lightness: 30%);
+  }
+
+  &.lighten-4 {
+    background-color: color.adjust($base-green, $lightness: 40%);
+  }
+}
