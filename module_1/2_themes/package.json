@@ -1,0 +1,15 @@
+{
+  "name": "themes",
+  "private": true,
+  "version": "0.0.0",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "parcel": "^2.14.0",
+    "@parcel/transformer-sass": "^2.14.0"
+  }
+}

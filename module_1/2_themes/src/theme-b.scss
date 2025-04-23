@@ -1,0 +1,12 @@
+@use "sass:color";
+
+$theme: (
+    base-color: blue,
+    important-color: color.adjust(blue, $lightness: -30%),
+    warning-color: color.adjust(blue, $lightness: 30%),
+    principal-font: cursive,
+    secondary-font: fantasy,
+    box-shadow-x: 3px,
+    box-shadow-y: -3px,
+    border-radius: 10px
+);

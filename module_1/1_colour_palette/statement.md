@@ -1,4 +1,4 @@
-# Ejercicio 1: Crear una paleta de colores dinámica.
+# Ejercicio 1: Crear una paleta de colores dinámica
 
 Usar el lenguaje Sass para crear distintos temas de paletas de colores.
 

@@ -1,0 +1,82 @@
+@use "theme-a" as a;
+@use "theme-b" as b;
+
+@mixin box-shadow($x: -3px, $y: 3px) {
+  box-shadow: $x $y 3px 3px rgba(0, 0, 0, 0.6);
+}
+
+@mixin apply-theme($theme) {
+  $base-color: map-get($theme, base-color);
+  $important-color: map-get($theme, important-color);
+  $warning-color: map-get($theme, warning-color);
+  $principal-font: map-get($theme, principal-font);
+  $secondary-font: map-get($theme, secondary-font);
+  $box-shadow-x: map-get($theme, box-shadow-x);
+  $box-shadow-y: map-get($theme, box-shadow-y);
+  $border-radius: map-get($theme, border-radius);
+
+  & > .box {
+    border-radius: $border-radius;
+
+    &.base {
+      background-color: $base-color;
+    }
+
+    &.important {
+      background-color: $important-color;
+    }
+
+    &.warning {
+      background-color: $warning-color;
+    }
+
+    &.box-shadow {
+      @include box-shadow($box-shadow-x, $box-shadow-y);
+    }
+  }
+
+  & .principal-font {
+    font-family: $principal-font;
+  }
+
+  & .secondary-font {
+    font-family: $secondary-font;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100dvh;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(auto-fill, 1fr);
+  gap: 10px;
+  & > h1 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  & > .box {
+    height: 50px;
+    width: 100px;
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  &.a {
+    @include apply-theme(a.$theme);
+  }
+
+  &.b {
+    @include apply-theme(b.$theme);
+  }
+}

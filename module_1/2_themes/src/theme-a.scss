@@ -1,0 +1,12 @@
+@use "sass:color";
+
+$theme: (
+    base-color: red,
+    important-color: color.adjust(red, $lightness: -30%),
+    warning-color: color.adjust(red, $lightness: 30%),
+    principal-font: monospace,
+    secondary-font: sans-serif,
+    box-shadow-x: -3px,
+    box-shadow-y: 3px,
+    border-radius: 0px
+);
