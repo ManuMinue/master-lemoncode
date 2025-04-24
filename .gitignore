@@ -175,6 +175,10 @@ dist
 .history
 .ionide
 
+yarn.lock
+package-lock.json
+.yarn
+
 .DS_Store
 
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,git
