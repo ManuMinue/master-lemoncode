@@ -1,0 +1,72 @@
+@use "sass:color";
+
+$primary-color: #66bf2e;
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Roboto, sans-serif;
+}
+
+
+.card {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: 300px;
+    background-color: white;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &__image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    &__content {
+        padding: 10px;
+        display: grid;
+        gap: 15px;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        color: #333 ;
+        margin: 0;
+    }
+
+    &__description {
+        color: #666;
+        line-height: 1.5;
+        font-size: 12px;
+        margin: 10px 0;
+    }
+
+    &__modification {
+        text-align: right;
+        font-size: 12px;
+        margin: 0;
+        &-date {
+          color: $primary-color;
+        }
+    }
+    
+
+    &__button {
+        padding: 10px 20px;
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 2px;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: color.adjust($color: $primary-color, $lightness: -20%);
+        }
+    }
+} 
